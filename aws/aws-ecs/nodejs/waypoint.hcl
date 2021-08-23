@@ -5,8 +5,8 @@ runner {
 
   data_source "git" {
     url  = "https://github.com/catsby/waypoint-examples.git"
-    path = "aws/aws-ecs/node-js"
-    ref = "catsby-us-west-2"
+    path = "aws/aws-ecs/nodejs"
+    ref = "refs/heads/catsby-us-west-2"
   }
 }
 
