@@ -24,13 +24,13 @@ app "example-nodejs" {
 
   build {
     use "pack" {}
-    # registry {
-    #   use "docker" {
-    #     image = "example-nodejs"
-    #     tag   = "1"
-    #     local = true
-    #   }
-    # }
+    registry {
+      use "docker" {
+        image = "example-nodejs"
+        tag   = "1"
+        local = true
+      }
+    }
   }
 
   deploy {
