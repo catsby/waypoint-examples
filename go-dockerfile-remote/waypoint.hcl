@@ -20,12 +20,10 @@ app "web" {
     use "pack" {}
 
     registry {
-      registry {
-        use "docker" {
-          image = "go-remote-docker"
-          tag   = "1"
-          local = true
-        }
+      use "docker" {
+        image = "go-remote-docker"
+        tag   = "1"
+        local = true
       }
     }
   }
