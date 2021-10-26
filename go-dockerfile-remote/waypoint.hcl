@@ -6,7 +6,8 @@ runner {
   data_source "git" {
     url = "https://github.com/catsby/waypoint-examples"
 
-    ref = "refs/heads/go-remote-docker"
+    ref  = "refs/heads/go-remote-docker"
+    path = "go-dockerfile-remote"
   }
 
   # poll {
