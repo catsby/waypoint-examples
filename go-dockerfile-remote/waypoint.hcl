@@ -17,7 +17,8 @@ runner {
 
 app "web" {
   build {
-    use "pack" {}
+    #use "pack" {}
+    use "docker" {}
 
     registry {
       use "docker" {
