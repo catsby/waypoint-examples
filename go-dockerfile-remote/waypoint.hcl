@@ -4,9 +4,9 @@ runner {
   enabled = true
 
   data_source "git" {
-    url = "https://github.com/catsby/waypoint-ecs"
+    url = "https://github.com/catsby/waypoint-examples"
 
-    ref = "refs/heads/catsby"
+    ref = "refs/heads/go-remote-docker"
   }
 
   # poll {
@@ -16,23 +16,30 @@ runner {
 
 app "web" {
   build {
-    use "docker" {}
+    use "pack" {}
 
     registry {
-      use "aws-ecr" {
-        region = "us-west-2"
-
-        #repository = "797645259670.dkr.ecr.us-west-2.amazonaws.com/cts-waypoint-server"
-        repository = "cts-waypoint-server/thing"
-        tag        = "latest"
+      registry {
+        use "docker" {
+          image = "go-remote-docker"
+          tag   = "1"
+          local = true
+        }
       }
     }
   }
 
   deploy {
-    use "aws-ecs" {
-      region = "us-west-2"
-      memory = 1024
+    use "kubernetes" {
+      probe_path = "/"
+    }
+  }
+
+  release {
+    use "kubernetes" {
+      // Sets up a load balancer to access released application
+      load_balancer = true
+      port          = 3000
     }
   }
 }
