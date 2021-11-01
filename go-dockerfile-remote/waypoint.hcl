@@ -9,10 +9,6 @@ runner {
     ref  = "refs/heads/go-remote-docker"
     path = "go-dockerfile-remote"
   }
-
-  # poll {
-  #   enabled = true
-  # }
 }
 
 app "web" {
@@ -27,19 +23,33 @@ app "web" {
         local = true
       }
     }
+
+    #registry {
+    #  use "aws-ecr" {
+    #    region = "us-west-2"
+
+    #    #repository = "797645259670.dkr.ecr.us-west-2.amazonaws.com/cts-waypoint-server"
+    #    repository = "cts-go/go-remote-docker"
+    #    tag        = "latest"
+    #  }
+    #}
   }
 
   deploy {
-    use "kubernetes" {
-      probe_path = "/"
-    }
+    use "docker" {}
   }
 
-  release {
-    use "kubernetes" {
-      // Sets up a load balancer to access released application
-      load_balancer = true
-      port          = 3000
-    }
-  }
+  # deploy {
+  #   use "kubernetes" {
+  #     probe_path = "/"
+  #   }
+  # }
+
+  # release {
+  #   use "kubernetes" {
+  #     // Sets up a load balancer to access released application
+  #     load_balancer = true
+  #     port          = 3000
+  #   }
+  # }
 }
