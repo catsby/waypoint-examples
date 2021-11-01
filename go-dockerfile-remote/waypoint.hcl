@@ -25,19 +25,20 @@ app "web" {
     # }
 
     registry {
-      #use "aws-ecr" {  #  region = "us-west-2"
-
-      #  #repository = "797645259670.dkr.ecr.us-west-2.amazonaws.com/cts-waypoint-server"
-      #  repository = "cts-go/go-remote-docker"
-      #  tag        = "latest"
-      #}
-      use "docker" {
-        # region = "us-west-2"
-
-        image = "797645259670.dkr.ecr.us-west-2.amazonaws.com/cts-hello"
-
-        tag = "latest"
+      use "aws-ecr" {
+        #repository = "797645259670.dkr.ecr.us-west-2.amazonaws.com/cts-waypoint-server"
+        region     = "us-west-2"
+        repository = "cts-go/go-remote-docker" #  region = "us-west-2"
+        tag        = "latest"
       }
+
+      # use "docker" {
+      #   # region = "us-west-2"
+
+      #   image = "797645259670.dkr.ecr.us-west-2.amazonaws.com/cts-hello"
+
+      #   tag = "latest"
+      # }
     }
   }
 
