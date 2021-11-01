@@ -16,13 +16,13 @@ app "web" {
     #use "pack" {}
     use "docker" {}
 
-    registry {
-      use "docker" {
-        image = "go-remote-docker"
-        tag   = "1"
-        local = true
-      }
-    }
+    # registry {
+    #   use "docker" {
+    #     image = "go-remote-docker"
+    #     tag   = "1"
+    #     local = true
+    #   }
+    # }
 
     #registry {
     #  use "aws-ecr" {
