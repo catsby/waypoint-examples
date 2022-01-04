@@ -1,4 +1,4 @@
-project = "example-go"
+project = "go-remote-docker"
 
 runner {
   enabled = true
