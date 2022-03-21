@@ -37,8 +37,8 @@ app "example-nodejs" {
         # image = "192.168.147.4:5000/example-nodejs"
         image = "clint-C02C60MUMD6R.local:5000/example-nodejs"
         tag   = "1"
-        username = var.registry_username
-        password = var.registry_password
+        # username = var.registry_username
+        # password = var.registry_password
         local = false
       }
     }
