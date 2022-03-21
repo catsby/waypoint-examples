@@ -25,13 +25,20 @@ app "example-nodejs" {
   build {
     use "pack" {}
     registry {
-      use "docker" {
-        # local registry
-        image = "192.168.147.4:5000/example-nodejs"
-        tag   = "1"
-        local = false
+      use "aws-ecr" {
+        region     = "us-west-2"
+        repository = "example-nodejs-repcount"
+        tag        = "latest"
       }
     }
+    # registry {
+    #   use "docker" {
+    #     # local registry
+    #     image = "192.168.147.4:5000/example-nodejs"
+    #     tag   = "1"
+    #     local = false
+    #   }
+    # }
   }
 
   deploy {
