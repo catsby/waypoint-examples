@@ -29,7 +29,7 @@ app "example-nodejs" {
         # local registry
         image = "localhost:5000/example-nodejs"
         tag   = "1"
-        local = true
+        local = false
       }
     }
   }
