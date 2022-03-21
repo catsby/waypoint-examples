@@ -27,7 +27,7 @@ app "example-nodejs" {
     registry {
       use "docker" {
         # local registry
-        image = "0.0.0.0:5000/example-nodejs"
+        image = "192.168.147.4:5000/example-nodejs"
         tag   = "1"
         local = false
       }
